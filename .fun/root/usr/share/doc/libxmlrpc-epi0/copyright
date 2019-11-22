@@ -1,0 +1,80 @@
+X-Format-Specification: http://wiki.debian.org/Proposals/CopyrightFormat
+X-Debianized-By: Paul Hampson <Paul.Hampson@Pobox.com>, 
+ Robin Cornelius <robin.cornelius@gmail.com>
+X-Debianized-Date: Sun, 18 Mar 2007 16:09:09 +1100.
+X-Source-Downloaded-From: http://sourceforge.net/projects/xmlrpc-epi/
+X-Upstream-Author: Dan Libby <danda@users.sourceforge.net>
+
+Files: debian/*
+Copyright: (C) 2007 Paul Hampson <Paul.Hampson@Pobox.com>
+ (C) 2007,2008,2011 Robin Cornelius <robin.cornelius@gmail.com>
+Licence: MIT
+  Subject to the following 3 conditions, you are permitted, free
+  of charge, to (a) use, copy, distribute, modify, perform and display this
+  software and associated documentation files (the "Software"), and (b)
+  permit others to whom the Software is furnished to do so as well.
+
+  1) The above copyright notice and this permission notice shall be included
+  without modification in all copies or substantial portions of the
+  Software.
+
+  2) THE SOFTWARE IS PROVIDED "AS IS", WITHOUT ANY WARRANTY OR CONDITION OF
+  ANY KIND, EXPRESS, IMPLIED OR STATUTORY, INCLUDING WITHOUT LIMITATION ANY
+  IMPLIED WARRANTIES OF ACCURACY, MERCHANTABILITY, FITNESS FOR A PARTICULAR
+  PURPOSE OR NONINFRINGEMENT.
+
+  3) IN NO EVENT SHALL THE COPYRIGHT HOLDERS BE LIABLE FOR ANY DIRECT, INDIRECT,
+  SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES OR LOST PROFITS ARISING OUT
+  OF OR IN CONNECTION WITH THE SOFTWARE (HOWEVER ARISING, INCLUDING
+  NEGLIGENCE), EVEN IF THE COPYRIGHT HOLDERS ARE AWARE OF THE POSSIBILITY OF
+  SUCH DAMAGES.
+
+Files: src/base64.h, src/base64.c
+Copyright: John Walker
+Licence: PD
+ This program is in the public domain.
+
+Files: src/queue.c, src/queue.h
+Copyright: 1993 Peter Yard 
+Licence: PD
+ This code is released to the public domain.
+
+The following file is included in the source distribution but is an example file
+only and not required to build the xmlrpc-epi0 library. It is mentioned here as
+it is under a different licence to the rest of the package. It is not used to
+build the library and is not installed by this Debian package.
+
+Files: sample/sample.c
+Copyright: (C) 2000 Epinions, Inc.
+Licence: LGPL
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Library General Public
+ License as published by the Free Software Foundation; either
+ version 2 of the License, or (at your option) any later version.
+
+On Debian systems, the complete text of the GNU Lesser Public License
+can be found in file "/usr/share/common-licenses/LGPL".
+
+Files: *
+Copyright: (C) 2000-2001 Epinions, Inc.
+Licence: MIT
+  Subject to the following 3 conditions, Epinions, Inc.  permits you, free
+  of charge, to (a) use, copy, distribute, modify, perform and display this
+  software and associated documentation files (the "Software"), and (b)
+  permit others to whom the Software is furnished to do so as well.
+
+  1) The above copyright notice and this permission notice shall be included
+  without modification in all copies or substantial portions of the
+  Software.
+
+  2) THE SOFTWARE IS PROVIDED "AS IS", WITHOUT ANY WARRANTY OR CONDITION OF
+  ANY KIND, EXPRESS, IMPLIED OR STATUTORY, INCLUDING WITHOUT LIMITATION ANY
+  IMPLIED WARRANTIES OF ACCURACY, MERCHANTABILITY, FITNESS FOR A PARTICULAR
+  PURPOSE OR NONINFRINGEMENT.
+
+  3) IN NO EVENT SHALL EPINIONS, INC. BE LIABLE FOR ANY DIRECT, INDIRECT,
+  SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES OR LOST PROFITS ARISING OUT
+  OF OR IN CONNECTION WITH THE SOFTWARE (HOWEVER ARISING, INCLUDING
+  NEGLIGENCE), EVEN IF EPINIONS, INC.  IS AWARE OF THE POSSIBILITY OF SUCH
+  DAMAGES.
+

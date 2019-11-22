@@ -1,0 +1,22 @@
+RUNTIME custom
+RUN apt-get update
+RUN fun-install apt-get install nginx 
+RUN fun-install apt-get install php-common
+RUN fun-install apt-get install php-fpm
+RUN fun-install apt-get install php-cli
+RUN fun-install apt-get install php-cgi
+RUN fun-install apt-get install php-mbstring
+RUN fun-install apt-get install php-mysql 
+RUN fun-install apt-get install php-xml 
+RUN fun-install apt-get install php-xmlrpc
+RUN fun-install apt-get install php-soap 
+RUN fun-install apt-get install php-gd
+RUN fun-install apt-get install php-intl 
+RUN fun-install apt-get install php-ldap 
+RUN fun-install apt-get install php-zip 
+RUN fun-install apt-get install php-curl
+RUN fun-install apt-get install php-json 
+RUN fun-install apt-get install php-opcache 
+RUN fun-install apt-get install libedit2
+RUN fun-install apt-get install libncurses5
+RUN fun-install apt-get install php-readline
