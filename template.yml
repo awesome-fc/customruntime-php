@@ -1,0 +1,46 @@
+ROSTemplateFormatVersion: '2015-09-01'
+Transform: 'Aliyun::Serverless-2018-04-03'
+Resources:
+  customruntime-php:
+    Type: 'Aliyun::Serverless::Service'
+    Properties:
+      Description: 'helloworld'
+      # LogConfig: # opyional
+      #   Project: 'auto-op-demo-pro'
+      #   Logstore: 'fc-log'
+      NasConfig: Auto
+      # VpcConfig:
+      #   VpcId: 'vpc-xxxxxxxxxxxx'
+      #   VSwitchIds: ["vsw-xxxxxxxxx"]
+      #   SecurityGroupId: 'sg-xxxxxxxxx'
+      # NasConfig:
+      #   UserId: 33
+      #   GroupId: 33
+      #   MountPoints: 
+      #     - ServerAddr: '0825xxxxxxxxxx.cn-hangzhou.nas.aliyuncs.com:/customruntime-php'
+      #       MountDir: '/mnt/auto'
+    
+    wordpress:
+      Type: 'Aliyun::Serverless::Function'
+      Properties:
+        Handler: index.handler
+        Runtime: custom
+        CodeUri: './'
+        MemorySize: 512
+        Timeout: 300
+      Events:
+        httpTrigger:
+          Type: HTTP
+          Properties:
+            AuthType: ANONYMOUS
+            Methods: [ 'HEAD', 'POST', 'PUT', 'GET', 'DELETE']
+
+  wp.mofangdegisn.cn:
+    Type: 'Aliyun::Serverless::CustomDomain'
+    Properties:
+      Protocol: HTTP
+      RouteConfig:
+        Routes: 
+          '/*':
+            ServiceName: customruntime-php
+            FunctionName: wordpress

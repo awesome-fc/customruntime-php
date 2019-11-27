@@ -1,0 +1,15 @@
+#!/bin/bash
+set +e
+
+echo "start nginx"
+nginx -c /code/.fun/root/etc/nginx/nginx.conf
+
+echo "start php-fpm"
+php-fpm7.0 -c /code/.fun/root/usr/lib/php/7.0/php.ini-production -y /code/.fun/root/etc/php/7.0/fpm/php-fpm.conf
+
+echo "listening ...."
+
+while true
+do
+    :
+done
