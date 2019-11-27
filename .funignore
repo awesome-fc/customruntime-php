@@ -2,4 +2,5 @@
 template.yml
 .funignore
 .fun/nas
-test-tools
+.fun/tmp
+readme.md
