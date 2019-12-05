@@ -6,35 +6,43 @@
 
 ## 操作步骤
 
+## 准备条件
+
+[免费开通函数计算](http://statistics.cn-shanghai.1221968287646227.cname-test.fc.aliyun-inc.com/?title=ServerlessWordPress&author=rsong&type=click&url=http://fc.console.aliyun.com) ， 按量付费，函数计算有很大的免费额度。
+
+[免费开通文件存储服务NAS](https://nas.console.aliyun.com/)， 按量付费
+
 #### 1. clone 该工程
 
 ```bash
 git clone https://github.com/awesome-fc/customruntime-php.git
 ```
 
-#### 2. 安装最新版本的 fun
+#### 2. 手动设置下 bootstrap 和 nginx 的权限
+
+```bash
+chmod u+s .fun/root/usr/sbin/nginx
+
+chmod u+s bootstrap
+```
+
+#### 3. 安装最新版本的 fun
 [fun 安装手册](https://github.com/alibaba/funcraft/blob/master/docs/usage/installation-zh.md)
 
 在使用前，我们需要先进行配置，通过键入 fun config，然后按照提示，依次配置 Account ID、Access Key Id、Secret Access Key、 Default Region Name 即可。
 
-#### 3. 上传网站(这里是wordpress)到远端 NAS
+#### 4. 上传网站(这里是wordpress)到远端 NAS
 
-- template.yml 中的 NasConfig: Auto, 执行为 fun nas init
+- 执行为 `fun nas init`
 
 - fun nas sync， 将本地 .fun/nas/auto-default/customruntime-php/wordpress 工程上传到远端 NAS
 
-- template.yml 中的 NasConfig 改成具体的 config（具体的 vpc 和 mnt 可以由上一步执行过程中可见）， 主要是 uid 和 gid 改成 www-data 对应的 33
- 
- > 因为 fun NasConfig: Auto 默认支持的 uid 和 gid 是 10003， 所以执行函数时候，需要的用户是 www-data, 等后续 NasConfig: Auto 支持填写 uid 和 gid 功能，则不需要  NasConfig 换来换去了。
- 
-- 将远程 NAS 中的 wordpress 目录的所有者改成 www-data
+- 执行 `fun nas ls nas:///mnt/auto/` 查看远端 NAS 是否已经有了对应的目录， 即上传是否成功
 
-	``` chown -R www-data:www-data wordpress ```
-	
-	这个可以通过 ecs 挂载 NAS 修改或者在该 service 新建一个函数，在函数中执行这个命令
-	
-#### 4. 执行 `fun deploy`,  成功部署service，function 和对应的自定义域名
+#### 5. 执行 `fun deploy`,  成功部署service，function 和对应的自定义域名
    > 先去域名解析, 比如在示例中, 将域名 wp.mofangdegisn.cn 解析到 123456.cn-hangzhou.fc.aliyuncs.com, 对应的域名、accountId 和 region 修改成自己的
+   
+   > Tips: 如果第一次访问 php 出现了 502 错误， 可以先等待一会， 因为这个时候 nginx 已经启动， 但是php-fpm 还没有启动完全， 这个时候可以访问：http://wp.mofangdegisn.cn/readme.html, 验证 nginx 启动成功，  访问：http://wp.mofangdegisn.cn/info.php 可以验证 php-fpm 启动成功。
 
 ## 从头到尾 DIY
 
@@ -86,4 +94,4 @@ bootstrap 中有关启动命令行 config 位置可能需要根据具体情况�
 
 #### NEXT
 
-按照前文中的操作步骤 3 和 4 即可
+按照前文中的操作步骤 4 和 5 即可

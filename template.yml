@@ -8,18 +8,10 @@ Resources:
       # LogConfig: # opyional
       #   Project: 'auto-op-demo-pro'
       #   Logstore: 'fc-log'
-      NasConfig: Auto
-      # VpcConfig:
-      #   VpcId: 'vpc-xxxxxxxxxxxx'
-      #   VSwitchIds: ["vsw-xxxxxxxxx"]
-      #   SecurityGroupId: 'sg-xxxxxxxxx'
-      # NasConfig:
-      #   UserId: 33
-      #   GroupId: 33
-      #   MountPoints: 
-      #     - ServerAddr: '0825xxxxxxxxxx.cn-hangzhou.nas.aliyuncs.com:/customruntime-php'
-      #       MountDir: '/mnt/auto'
-    
+      NasConfig:
+        Auto: true
+        UserId: 33
+        GroupId: 33
     wordpress:
       Type: 'Aliyun::Serverless::Function'
       Properties:
@@ -28,6 +20,7 @@ Resources:
         CodeUri: './'
         MemorySize: 512
         Timeout: 300
+        InstanceConcurrency: 20
       Events:
         httpTrigger:
           Type: HTTP
