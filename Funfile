@@ -20,5 +20,3 @@ RUN fun-install apt-get install php-opcache
 RUN fun-install apt-get install libedit2
 RUN fun-install apt-get install libncurses5
 RUN fun-install apt-get install php-readline
-RUN fun-install apt-get install libprocps6
-RUN fun-install apt-get install procps
