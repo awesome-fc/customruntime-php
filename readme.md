@@ -26,6 +26,8 @@ chmod u+s .fun/root/usr/sbin/nginx
 chmod u+s bootstrap
 ```
 
+修改 [wordpress.conf](https://github.com/awesome-fc/customruntime-php/blob/master/.fun/root/etc/nginx/sites-enabled/wordpress.conf#L5) 中的 server_name 为自己的自定义域名
+
 #### 3. 安装最新版本的 fun
 [fun 安装手册](https://github.com/alibaba/funcraft/blob/master/docs/usage/installation-zh.md)
 
@@ -42,7 +44,7 @@ chmod u+s bootstrap
 #### 5. 执行 `fun deploy`,  成功部署service，function 和对应的自定义域名
    > 先去域名解析, 比如在示例中, 将域名 wp.mofangdegisn.cn 解析到 123456.cn-hangzhou.fc.aliyuncs.com, 对应的域名、accountId 和 region 修改成自己的
    
-   > Tips: 如果第一次访问 php 出现了 502 错误， 可以先等待一会， 因为这个时候 nginx 已经启动， 但是php-fpm 还没有启动完全， 这个时候可以访问：http://wp.mofangdegisn.cn/readme.html, 验证 nginx 启动成功，  访问：http://wp.mofangdegisn.cn/info.php 可以验证 php-fpm 启动成功。
+   > Tips: 可以访问：http://wp.mofangdegisn.cn/readme.html, 验证 nginx 启动成功， 访问：http://wp.mofangdegisn.cn/info.php 可以验证 php-fpm 启动成功。
 
 ## 从头到尾 DIY
 
