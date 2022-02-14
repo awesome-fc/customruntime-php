@@ -1,3 +1,7 @@
+## 最新声明
+
+最新请参考 [https://github.com/devsapp/start-web-framework/tree/master/web-framework/php/wordpress](https://github.com/devsapp/start-web-framework/tree/master/web-framework/php/wordpress)
+
 ## 简介
 
 本示例展示的基于函数计算 custom runtime 构建 php web 应用， 在这个案例中，可以将基于传统模式 nginx + php-fpm + mysql 开发的网站简单无缝迁移到函数计算平台。
